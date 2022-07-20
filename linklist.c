@@ -279,6 +279,11 @@ int list_update_value(linkList* L,datatype old_e,datatype new_e)
 	}
 	//修改
 	int index = list_search_value(L,old_e);
+	if(index<=0)
+	{
+		printf("该值不存在!\n");
+		return -2;
+	}
 	linkList* p = node_find(L,index);
 	p->data = new_e;
 	printf("按值修改成功!\n");
